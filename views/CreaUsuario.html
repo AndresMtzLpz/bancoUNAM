@@ -1,0 +1,85 @@
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+          <title>Registro Usuario</title>
+         
+
+     <!-- Bootstrap 4.4 -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+      <!-- Custom styles for this template -->
+      <link href="../css/signin.css" rel="stylesheet">
+
+
+        <meta http-equiv="Expires" content="0">
+      <meta http-equiv="Last-Modified" content="0">
+      <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+
+    </head>
+
+    <body>
+
+
+      <header>
+        <div class="navbar navbar-dark bg-warning shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <h5 class="my-0 mr-md-auto font-weight-normal text-white">Banco estudiantil UNAM</h5>
+
+            </button>
+          </div>
+        </div>
+      </header>
+
+      
+        <div class="container"  >
+              
+  
+          <form class="form-signin" method="post" id="codeForm" action="../creaUsuario.php">
+            <h2 class="form-signin-heading text-white">Nuevo Usuario</h2>
+            <!-- Nombre -->
+            <div class="form-group">
+              <label class="control-label text-white">Nombre : </label>
+                <div class="input-group" >
+                  <input class="form-control" id="contentName" name="contentName" type="text" required="required" placeholder="Nombre" >
+                  <input class="form-control" id="contentAPaterno" name="contentAPaterno" type="text" required="required" placeholder="A Paterno">
+                  <input class="form-control" id="contentAMaterno" name="contentAMaterno" type="text" required="required" placeholder="A Materno">
+                  <input class="form-control" id="contentEdad" name="contentEdad" type="text" required="required" placeholder="Edad">
+                </div>
+            </div>
+            <!-- Contraseña -->
+            <div class="form-group">
+                <label class="control-label text-white">Contraseña : </label>
+                <input class="form-control col-xs-1" id="contentContra" name="contentContra" type="password" required="required" placeholder="Contraseña"  >
+            </div>
+
+            <!-- Telefono -->
+            <div class="form-group">
+                <label class="control-label text-white">Teléfono : </label>
+                <input class="form-control col-xs-1" id="contentNumber" name="contentNumber" type="text" required="required" placeholder="Teléfono">
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label class="control-label text-white">Email : </label>
+                <input class="form-control col-xs-1" id="contentEmail" name="contentEmail" type="Email" required="required" placeholder="Email" >
+            </div>
+
+            <!-- Botones -->
+
+            <div class="form-group">
+                <label class="control-label"></label>
+                <input type="submit" name="submit" id="generar-btn" class="btn bg-warning btn-block" value="Registrar" />                          
+            </div>
+          </form>
+        </div>
+
+
+    </body>
+</html>
