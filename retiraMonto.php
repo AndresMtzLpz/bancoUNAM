@@ -33,7 +33,7 @@
 
 
 
-		#Se crea registro deposito primero
+		#Se crea registro retiro primero
 		$statement = $conexion->prepare("INSERT INTO depositos_cliente (id_cliente,num_cuenta,cantidad_deposito, date_deposito,saldo_corte) 
 			VALUES( ?,?,?,SYSDATE(),?)");
 		$statement->execute([$usuario, $cuenta,$monto,$saldo]);
