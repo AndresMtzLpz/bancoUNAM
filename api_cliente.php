@@ -6,8 +6,8 @@ if (isset($_SESSION['usuario'])) {
 	try {
 		$Tn = date('dmYGisu');
 		//el nombre de la transaccion incluye dia, mes, año, hora, minuto, segundo y microsegundos
-		//para que sea unica al momento de solicitarla
-		#conexion con la Base de Datos
+		//para que sea unica al momento de solicitar la conexion a BD
+	
 		$conexion = new PDO('mysql:host=localhost;dbname=bancoUNAM','root','')
 		or die("Ha sucedido un error inexperado en la conexion de la base de datos");
 
@@ -25,6 +25,7 @@ if (isset($_SESSION['usuario'])) {
 			order by depositos_cliente.date_deposito  
 			";
 
+		//Varibles para recorrer los registros del query
 		$i = 0;
 		$num_columnas =0;
 		$resultados = $conexion->query($sql);
@@ -37,9 +38,12 @@ if (isset($_SESSION['usuario'])) {
 			$date_deposito[$i] = $fila['date_deposito'];
 			$i = $i +1;
 			$num_columnas = $num_columnas +1 ;
-			#$datos= print_r ($fila, true);
-			#echo $fila[0];
-			
+			$clientes[]=array('nombre_cliente' => $nombre_usuario,
+				'id_cliente' =>$id_cliente,
+				'num_cuenta'=> $num_cuenta,
+				'saldo_corte' =>$saldo,
+				'cantidad_deposito'=> $cantidad_deposito,
+				'date_deposito'=> $date_deposito);
 		}
 
 		$conexion->query("commit and chain;"); //Indica que la transacción fue consumada.
@@ -54,7 +58,7 @@ if (isset($_SESSION['usuario'])) {
 //Creamos el JSON
 //$clientes['clientes'] = $clientes;
 $json_string = json_encode($clientes);
-//echo $json_string;
+echo $json_string;
 //echo $conexion;
 } else {
 	header('Location: login.php');
