@@ -54,21 +54,32 @@ try {
 			$nombre_admin= $fila['nombre_admin']; 	
 		}
 
+
+	
+
+
 } catch (PDOException $e) {
 	echo "Error:" . $e->getMessage();
 	$conexion->query("rollback work and chain;"); //Indica que la transacción fue abortada.
+	
+	$logFile = fopen("log.txt", 'a') or die("Error creando archivo");
+	fwrite($logFile, "\n".date("d/m/Y H:i:s").$e."\n") or die("Error escribiendo en el archivo");fclose($logFile);
+
 }
 
 		  
 
 //Creamos el JSON
 //$clientes['clientes'] = $clientes;
-$json_string = json_encode($clientes);
+$json_string = json_encode($clientes[$num_columnas - 1]);
 echo $json_string;
 //Si queremos crear un archivo json, sería de esta forma:
 /*
 $file = 'clientes.json';
 file_put_contents($file, $json_string);
 */
+
+$logFile = fopen("log.txt", 'a') or die("Error creando archivo");
+fwrite($logFile, "\n".date("d/m/Y H:i:s").json_encode($clientes[$num_columnas - 1])."\n") or die("Error escribiendo en el archivo");fclose($logFile);
 
 ?>

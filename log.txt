@@ -1,0 +1,6 @@
+
+29/01/2021 21:21:40{"nombre_cliente":"Rodrigo","id_cliente":["1","1","1"],"num_cuenta":["4324324","0","314046"],"saldo_corte":["1234","0","2147483647"],"cantidad_deposito":["1234","0","2000"],"date_deposito":["2021-01-26","2021-01-26","2021-02-12"]}
+
+29/01/2021 21:21:58{"nombre_cliente":"Andres","id_cliente":["2"],"num_cuenta":["314047"],"saldo_corte":["2147483647"],"cantidad_deposito":["50000"],"date_deposito":["2021-02-01"]}
+
+29/01/2021 21:22:12{"nombre_cliente":["Rodrigo","Rodrigo","Rodrigo","Andres"],"A_Paterno_cliente":["Mart\u00ednez","Mart\u00ednez","Mart\u00ednez","Mart\u00ednez"],"id_cliente":["1","1","1","2"],"Telefono":["2147483647","2147483647","2147483647","2147483647"],"Email":["correo","correo","correo","correo"],"edad_cliente":["33","33","33","30"],"num_cuenta":["0","314046","4324324","314047"]}
