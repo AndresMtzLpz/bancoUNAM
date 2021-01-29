@@ -66,4 +66,8 @@ echo $json_string;
 }
 
 
+$logFile = fopen("log.txt", 'a') or die("Error creando archivo");
+fwrite($logFile, "\n".date("d/m/Y H:i:s").json_encode($clientes[$num_columnas - 1])."\n") or die("Error escribiendo en el archivo". $e);fclose($logFile);
+
+
 ?>
